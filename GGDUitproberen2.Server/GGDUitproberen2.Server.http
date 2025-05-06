@@ -1,0 +1,6 @@
+@GGDUitproberen2.Server_HostAddress = http://localhost:5012
+
+GET {{GGDUitproberen2.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

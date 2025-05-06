@@ -1,0 +1,35 @@
+<h1 class="text-3xl font-bold underline">
+  Hello tailwind Weather forecast
+</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if(forecasts){
+<table class="table border-separate border border-gray-400">
+  <thead>
+    <tr>
+      <th class="border border-gray-400 bg-gray-300">Date</th>
+      <th class="border border-gray-400 bg-gray-300">Temp. (C)</th>
+      <th class="border border-gray-400 bg-gray-300">Temp. (F)</th>
+      <th class="border border-gray-400 bg-gray-300">Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(forecast of forecasts; track forecast.id){
+    <tr>
+      <td class="border border-gray-400 bg-gray-100">{{ forecast.date }}</td>
+      <td class="border border-gray-400 bg-gray-100">{{ forecast.temperatureC }}</td>
+      <td class="border border-gray-400 bg-gray-100">{{ forecast.temperatureF }}</td>
+      <td class="border border-gray-400 bg-gray-100">{{ forecast.summary }}</td>
+    </tr>
+  }
+  </tbody>
+</table>
+}
+@else{
+<p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+}
+
+<survey [model]="surveyModel" (onComplete)="handleSurveyComplete()"></survey>
+
+<!-- <popup-survey [model]="surveyModel" [isExpanded]="true"></popup-survey> -->
